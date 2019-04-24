@@ -1,8 +1,8 @@
 import React from "react"
 import Slider from "./slider"
 import LocalizedStrings from "react-localization"
-import { BrowserView, MobileView } from "react-device-detect"
-
+import { MobileView } from "react-device-detect"
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 
 export default class Player extends React.Component {
   constructor(props) {
@@ -284,7 +284,7 @@ export default class Player extends React.Component {
   }
 
   render() {
-    // console.log(strings.getLanguage())
+
 
     const { balance, loaded, playing, strings, showTeam, showContact } = this.state
     let modal = null
@@ -362,9 +362,7 @@ export default class Player extends React.Component {
                   <div className="">{strings.teamprofessions.fourth}</div>
                   <div className="">{strings.teamprofessions.fifth}</div>
                   <div className="">{strings.teamprofessions.sixth}</div>
-                  <div className="">
-                    {strings.teamprofessions.seventh}
-                  </div>
+                  <div className="">{strings.teamprofessions.seventh}</div>
                   <div className="">{strings.teamprofessions.eights}</div>
                   <div className="">{strings.teamprofessions.nineth}</div>
                   <div className="">{strings.teamprofessions.tenth}</div>
@@ -373,15 +371,13 @@ export default class Player extends React.Component {
                   <div className="">{strings.teammembers.first}</div>
                   <div className="">{strings.teammembers.second}</div>
                   <div className="">{strings.teammembers.third}</div>
-                  <div className="">{strings.teamprofessions.fourth}</div>
-                  <div className="">{strings.teamprofessions.fifth}</div>
-                  <div className="">{strings.teamprofessions.sixth}</div>
-                  <div className="">
-                    {strings.teamprofessions.seventh}
-                  </div>
-                  <div className="">{strings.teamprofessions.eights}</div>
-                  <div className="">{strings.teamprofessions.nineth}</div>
-                  <div className="">{strings.teamprofessions.tenth}</div>
+                  <div className="">{strings.teammembers.fourth}</div>
+                  <div className="">{strings.teammembers.fifth}</div>
+                  <div className="">{strings.teammembers.sixth}</div>
+                  <div className="">{strings.teammembers.seventh}</div>
+                  <div className="">{strings.teammembers.eights}</div>
+                  <div className="">{strings.teammembers.nineth}</div>
+                  <div className="">{strings.teammembers.tenth}</div>
                 </div>
               </div>
             </div>
