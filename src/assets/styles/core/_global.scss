@@ -19,7 +19,7 @@ html {
 
 body {
   min-height: 100%;
-  padding: 40px;
+  padding: 2.7vw;
   font-size: 20px;
 }
 
@@ -38,16 +38,16 @@ body {
 }
 
 .videos {
-  margin-top: 35px;
+//   margin-top: 35px;
 }
 
 video {
   &.first {
-    padding-right: 12.5px;
+    padding-right: .8vw;
   }
 
   &.second {
-    padding-left: 12.5px;
+    padding-left: .8vw;
   }
 }
 
@@ -57,18 +57,14 @@ video {
   }
 }
 
-.wait {
-  // max-width: 400px;
-}
-
 h4 {
   line-height: 1.8rem;
 }
 
-.font-weight-bold {
-	font-family: "LiteraturnayaW01-Bold";	
-	// hack
+.balance {
+	font-family: "LiteraturnayaW01-Bold", "Times New Roman";
 	cursor: default;
+	min-width: 70px;
 }
 
 .link {
@@ -76,8 +72,13 @@ h4 {
   color: #8a8a8a;
   cursor: pointer;
   font-family: "LiteraturnayaW01-Bold", "Times New Roman";
-  font-weight: bold;
   &:hover, &.active {
     color: $body-color;
   }
+}
+
+footer {
+	.link {
+		line-height: 1.35;
+	}
 }

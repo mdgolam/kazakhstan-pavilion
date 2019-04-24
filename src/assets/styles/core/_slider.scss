@@ -30,7 +30,8 @@ $filll-c: $body-color;
 }
 
 .player__controls .slider input {
-	cursor: pointer;
+	outline: none;
+	// cursor: pointer;
 	&, &::-webkit-slider-thumb {
 		-webkit-appearance: none;
 	}   
@@ -45,7 +46,8 @@ $filll-c: $body-color;
 	font: 1em/1 arial, sans-serif;
 	
 	&::-webkit-slider-runnable-track {
-		@include track(1)
+		@include track(1);
+		outline: none;
 	}
 	&::-moz-range-track { @include track }
 	&::-ms-track { @include track }
@@ -57,7 +59,9 @@ $filll-c: $body-color;
 		margin-top: .5*($track-h - $thumb-d);
 		@include thumb
 	}
-	&::-moz-range-thumb { @include thumb }
+	&::-moz-range-thumb {
+		@include thumb;
+	    border-radius: 0; }
 	&::-ms-thumb {
 		margin-top: 0;
 		@include thumb

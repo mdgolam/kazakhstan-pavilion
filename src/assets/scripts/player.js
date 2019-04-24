@@ -440,8 +440,8 @@ export default class Player extends React.Component {
         {modal}
 
         <div className="d-flex flex-column justify-content-between w-100">
+          <h1 className="text-uppercase">{strings.pavillion}</h1>
           <div className="player">
-            <h1 className="text-uppercase">{strings.pavillion}</h1>
             <div className="d-flex videos justify-content-center">
               <div className="embed-responsive embed-responsive-4by3">
                 <video
@@ -482,14 +482,14 @@ export default class Player extends React.Component {
           </div>
           <div className="player__controls">
             <div className="slider d-flex justify-content-center align-items-center">
-              <div className="font-weight-bold">{strings.left}</div>
+              <div className="balance">{strings.left}</div>
               <Slider
                 min={-100}
                 max={100}
                 value={balance}
                 handleValueChange={this.handleBalanceChange}
               />
-              <div className="font-weight-bold">{strings.rigth}</div>
+              <div className="balance">{strings.rigth}</div>
             </div>
           </div>
 
@@ -514,11 +514,11 @@ export default class Player extends React.Component {
               </div>
             </div>
 
-            <footer className="nav justify-content-center">
-              <div className="px-2 link" onClick={this.toggleTeamModal}>
+            <footer className="d-flex justify-content-center">
+              <div className="link" onClick={this.toggleTeamModal}>
                 {strings.team}
               </div>
-              <div className="px-2 link" onClick={this.toggleContactModal}>
+              <div className="pl-3 link" onClick={this.toggleContactModal}>
                 {strings.contact}
               </div>
             </footer>
