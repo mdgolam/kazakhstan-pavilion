@@ -23,99 +23,15 @@ body {
   font-size: 20px;
 }
 
-%input {
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
 .player {
   &__controls {
-    .slider input {
-      -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-      width: 100%; /* Specific width is required for Firefox. */
-      background: transparent; /* Otherwise white in Chrome */
-
-      &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-      }
-
-      &:focus {
-        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-      }
-
-      &::-ms-track {
-        width: 100%;
-        cursor: pointer;
-
-        /* Hides the slider so custom styles can be added */
-        background: transparent;
-        border-color: transparent;
-        color: transparent;
-      }
-
-      &::-ms-thumb {
-        height: 14px;
-        width: 6px;
-        background: $black;
-        cursor: pointer;
-        margin-top: -14px;
-      }
-
-      &::-moz-range-thumb {
-        height: 14px;
-        width: 6px;
-        background: $black;
-        cursor: pointer;
-        margin-top: -14px;
-      }
-
-      &::-webkit-slider-thumb {
-        height: 14px;
-        width: 6px;
-        background: $black;
-        cursor: pointer;
-        margin-top: -6.0px;
-      }
-
-      &::-webkit-slider-runnable-track {
-        width: 100%;
-        height: 1.2px;
-        cursor: pointer;
-        border: 0.2px solid $black;
-      }
-
-      &::-moz-range-track {
-        width: 100%;
-        height: 1.2px;
-        cursor: pointer;
-        border: 0.2px solid $black;
-      }
-
-      &::-ms-track {
-        width: 100%;
-        height: 1.2px;
-        cursor: pointer;
-        border: 0.2px solid $black;
-      }
-	  
-    }
-
     &__lang {
-      margin-bottom: 25px;
-      div {
+      .link {
         line-height: 1.35;
-        cursor: default;
       }
-      .active {
-        color: #8a8a8a;
-        cursor: pointer;
-        border-bottom: 2.4px dotted #8a8a8a;
+      .link.active {
+        cursor: default;
+        color: black;
       }
     }
   }
@@ -123,12 +39,9 @@ body {
 
 .videos {
   margin-top: 35px;
-  // margin: 0 -12.5px;
 }
 
 video {
-  /*max-width: 50%;*/
-
   &.first {
     padding-right: 12.5px;
   }
@@ -139,15 +52,32 @@ video {
 }
 
 .team-members {
-	& > div {
-		line-height: 1.5;
-	}
+  & > div {
+    line-height: 1.5;
+  }
 }
 
 .wait {
-	// max-width: 400px;
+  // max-width: 400px;
 }
 
 h4 {
-	line-height: 1.8rem;
+  line-height: 1.8rem;
+}
+
+.font-weight-bold {
+	font-family: "LiteraturnayaW01-Bold";	
+	// hack
+	cursor: default;
+}
+
+.link {
+  transition: color 1.33s ease-out;
+  color: #8a8a8a;
+  cursor: pointer;
+  font-family: "LiteraturnayaW01-Bold", "Times New Roman";
+  font-weight: bold;
+  &:hover, &.active {
+    color: $body-color;
+  }
 }

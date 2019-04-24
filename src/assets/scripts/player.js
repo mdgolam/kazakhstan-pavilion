@@ -1,7 +1,6 @@
 import React from "react"
 import Slider from "./slider"
 import LocalizedStrings from "react-localization"
-import { getActiveLanguage } from "react-localize-redux"
 import { BrowserView, MobileView } from "react-device-detect"
 
 
@@ -14,6 +13,9 @@ export default class Player extends React.Component {
         start: "Start",
         pavillion: "The pavilion of the Kazakh SSR",
         contact: "Contact",
+        contactText: "Dear viewer, ",
+        contactText2:
+        "if you'd like to get in contact with us for any reason, please email. We are looking forward to feedback and collaborations.",
         team: "Team",
         close: "Close",
         wait: "We are sorry,",
@@ -61,6 +63,8 @@ export default class Player extends React.Component {
         sorry: "We are sorry,",
         sorry2: "but this website does not have a mobile version.",
         sorry3: "Please use desktop.",
+        contactText: "Дорогой зритель, ",
+        contactText2: "мы будем рады любому вашему мнению",
         teamprofessions: {
           first: "Создатель",
           second: "Режиссер",
@@ -82,7 +86,7 @@ export default class Player extends React.Component {
           sixth: "Дмитрий Чернэ",
           seventh: "Полина Ерохина",
           eights: "Екатерина Макаровская",
-          nineth: "Геворг ?",
+          nineth: "Геворк Арутюнян",
           tenth: "Отдельная благодарность Евгении Бышик."
         }
       }
@@ -322,7 +326,7 @@ export default class Player extends React.Component {
         >
           <div className="modal-dialog h-100" role="document">
             <div className="h-100 justify-content-center modal-content align-items-center">
-              <h1 className="text-left" onClick={this.handlePlayClick}>
+              <h1 className="text-left link" onClick={this.handlePlayClick}>
                 {strings.start}
               </h1>
             </div>
@@ -338,19 +342,19 @@ export default class Player extends React.Component {
           aria-modal="true"
         >
           <div className="modal-dialog h-100" role="document">
-            <div className="h-100 modal-content align-items-center">
+            <div className="h-100 modal-content align-items-center p-5">
               <div className="align-items-end modal-header w-100">
                 <h1 className="col-6 offset-3 text-uppercase">
                   {strings.team}
                 </h1>
                 <div
-                  className="col-3 text-right"
+                  className="col-3 text-right link"
                   onClick={this.toggleTeamModal}
                 >
                   {strings.close}
                 </div>
               </div>
-              <div className="modal-body team-members w-100 row">
+              <div className="modal-body team-members w-100 row  mt-5">
                 <div className="col-6 text-right">
                   <div className="">{strings.teamprofessions.first}</div>
                   <div className="">{strings.teamprofessions.second}</div>
@@ -358,7 +362,9 @@ export default class Player extends React.Component {
                   <div className="">{strings.teamprofessions.fourth}</div>
                   <div className="">{strings.teamprofessions.fifth}</div>
                   <div className="">{strings.teamprofessions.sixth}</div>
-                  <div className="">{strings.teamprofessions.seventh}</div>
+                  <div className="">
+                    {strings.teamprofessions.seventh}
+                  </div>
                   <div className="">{strings.teamprofessions.eights}</div>
                   <div className="">{strings.teamprofessions.nineth}</div>
                   <div className="">{strings.teamprofessions.tenth}</div>
@@ -370,7 +376,9 @@ export default class Player extends React.Component {
                   <div className="">{strings.teamprofessions.fourth}</div>
                   <div className="">{strings.teamprofessions.fifth}</div>
                   <div className="">{strings.teamprofessions.sixth}</div>
-                  <div className="">{strings.teamprofessions.seventh}</div>
+                  <div className="">
+                    {strings.teamprofessions.seventh}
+                  </div>
                   <div className="">{strings.teamprofessions.eights}</div>
                   <div className="">{strings.teamprofessions.nineth}</div>
                   <div className="">{strings.teamprofessions.tenth}</div>
@@ -389,10 +397,26 @@ export default class Player extends React.Component {
           aria-modal="true"
         >
           <div className="modal-dialog h-100" role="document">
-            <div className="h-100 justify-content-center modal-content align-items-center">
-              <h1 className="text-left" onClick={this.toggleContactModal}>
-                {strings.contact}
-              </h1>
+            <div className="h-100 justify-content-center modal-content align-items-center p-5">
+              <div className="align-items-end modal-header w-100">
+                <h1 className="col-6 offset-3 text-uppercase">
+                  {strings.contact}
+                </h1>
+                <div
+                  className="col-3 text-right link"
+                  onClick={this.toggleContactModal}
+                >
+                  {strings.close}
+                </div>
+              </div>
+              <div className="justify-content-center modal-body row w-100 mt-5">
+                <div
+                  className="text-center w-50"
+                >
+                  {strings.contactText}
+                  {strings.contactText2}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -417,7 +441,7 @@ export default class Player extends React.Component {
 
         <div className="d-flex flex-column justify-content-between w-100">
           <div className="player">
-            <h1>{strings.pavillion}</h1>
+            <h1 className="text-uppercase">{strings.pavillion}</h1>
             <div className="d-flex videos justify-content-center">
               <div className="embed-responsive embed-responsive-4by3">
                 <video
@@ -428,7 +452,6 @@ export default class Player extends React.Component {
                     this.firstVideo = ref
                   }}
                 >
-                  {/* <source src="assets/video/film_1_en.mp4" /> */}
                   <source
                     src={
                       "assets/video/f1" +
@@ -458,47 +481,49 @@ export default class Player extends React.Component {
             </div>
           </div>
           <div className="player__controls">
-            <div className="player__controls__lang d-flex justify-content-center">
-              <div
-                onClick={this.setEnglish}
-                className={
-                  "mr-3 " + (strings.getLanguage() == "ru" ? "active" : "")
-                }
-              >
-                English
-              </div>
-              <div
-                onClick={this.setRussian}
-                className={strings.getLanguage() == "en" ? "active" : ""}
-              >
-                Русский
-              </div>
-            </div>
             <div className="slider d-flex justify-content-center align-items-center">
-              <div>{strings.left}</div>
+              <div className="font-weight-bold">{strings.left}</div>
               <Slider
                 min={-100}
                 max={100}
                 value={balance}
                 handleValueChange={this.handleBalanceChange}
               />
-              <div>{strings.rigth}</div>
+              <div className="font-weight-bold">{strings.rigth}</div>
             </div>
           </div>
-          <footer className="nav justify-content-center">
-            <div className="px-2" onClick={this.toggleTeamModal}>
-              {strings.team}
+
+          <div className="align-items-end bottom d-flex justify-content-between">
+            <div className="player__controls__lang d-flex justify-content-center">
+              <div
+                onClick={this.setEnglish}
+                className={
+                  "link mr-3 " +
+                  (strings.getLanguage() == "ru" ? "" : "active")
+                }
+              >
+                English
+              </div>
+              <div
+                onClick={this.setRussian}
+                className={
+                  "link " + (strings.getLanguage() == "en" ? "" : "active")
+                }
+              >
+                Русский
+              </div>
             </div>
-            <div className="px-2" onClick={this.toggleContactModal}>
-              {strings.contact}
-            </div>
-          </footer>
+
+            <footer className="nav justify-content-center">
+              <div className="px-2 link" onClick={this.toggleTeamModal}>
+                {strings.team}
+              </div>
+              <div className="px-2 link" onClick={this.toggleContactModal}>
+                {strings.contact}
+              </div>
+            </footer>
+          </div>
         </div>
-        {/* </React.Fragment>
-      </BrowserView>
-      <MobileView>
-          <h1> Fuck you mane, sorry </h1>
-      </MobileView> */}
       </React.Fragment>
     )
   }

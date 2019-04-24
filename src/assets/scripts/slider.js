@@ -26,8 +26,10 @@ export default class Slider extends React.Component {
           max={this.props.max}
           value={this.state.value}
           onChange={this.changeValue}
+          style={{'--min':this.props.min,
+						 "--max:":this.props.max,
+						 "--val:":this.props.value+";"}}
         />
-        {/* <p className="mb-0">{this.state.value}</p> */}
       </div>
     );
   }
