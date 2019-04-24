@@ -1,12 +1,12 @@
 const pages = [
   {
-    output: './index.html',
+    output: "./index.html",
     content: {
-      title: 'project',
-      description: 'desc'
+      title: "Pavilion Kazakhstan",
+      description: ""
     },
-    template: './src/pages/home.hbs'
-  },
+    template: "./src/pages/home.hbs"
+  }
 ]
 
 module.exports = pages
