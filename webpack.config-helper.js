@@ -45,18 +45,18 @@ module.exports = (options) => {
         "window.Tether": "tether",
         Popper: ["popper.js", "default"]
       }),
-      new CopyWebpackPlugin([
-        { from: "./src/assets/images", to: "./assets/images" }
-      ]),
-      new CopyWebpackPlugin([
-        { from: "./src/assets/fonts", to: "./assets/fonts" }
-      ]),
-      new CopyWebpackPlugin([
-        {
-          from: "./src/assets/audio",
-          to: "./assets/audio"
-        }
-      ]),
+      // new CopyWebpackPlugin([
+      //   { from: "./src/assets/images", to: "./assets/images" }
+      // ]),
+      // new CopyWebpackPlugin([
+      //   { from: "./src/assets/fonts", to: "./assets/fonts" }
+      // ]),
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: "./src/assets/audio",
+      //     to: "./assets/audio"
+      //   }
+      // ]),
       new CopyWebpackPlugin([
         {
           from: "./src/assets/video",
