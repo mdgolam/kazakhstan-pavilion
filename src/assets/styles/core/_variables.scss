@@ -163,7 +163,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $gray-100 !default;
-$body-color:                $gray-900 !default;
+$body-color:                $black !default;
 
 
 // Links
@@ -230,7 +230,7 @@ $grid-gutter-width:           30px !default;
 $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
-$border-width:                1px !default;
+$border-width:                0px !default;
 $border-color:                $gray-300 !default;
 
 $border-radius:               .25rem !default;
@@ -288,7 +288,7 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.5 !default;
+$line-height-base:            1 !default;
 
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
@@ -869,7 +869,7 @@ $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
 
 $popover-font-size:                 $font-size-sm !default;
 $popover-bg:                        $white !default;
-$popover-max-width:                 276px !default;
+$popover-max-width:                 100%;
 $popover-border-width:              $border-width !default;
 $popover-border-color:              rgba($black, .2) !default;
 $popover-border-radius:             $border-radius-lg !default;
@@ -931,8 +931,8 @@ $badge-pill-border-radius:          10rem !default;
 // Padding applied to the modal body
 $modal-inner-padding:               1rem !default;
 
-$modal-dialog-margin:               .5rem !default;
-$modal-dialog-margin-y-sm-up:       1.75rem !default;
+$modal-dialog-margin:               0;
+$modal-dialog-margin-y-sm-up:       0;
 
 $modal-title-line-height:           $line-height-base !default;
 
@@ -954,10 +954,10 @@ $modal-header-padding-y:            1rem !default;
 $modal-header-padding-x:            1rem !default;
 $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
 
-$modal-xl:                          1140px !default;
-$modal-lg:                          800px !default;
-$modal-md:                          500px !default;
-$modal-sm:                          300px !default;
+$modal-xl:                          100%;
+$modal-lg:                          100%;
+$modal-md:                          100%;
+$modal-sm:                          100%;
 
 $modal-fade-transform:              translate(0, -50px) !default;
 $modal-show-transform:              none !default;

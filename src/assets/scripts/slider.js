@@ -18,16 +18,16 @@ export default class Slider extends React.Component {
 
   render() {
     return (
-      <div className="mx-3">
+      <div className="mx-3 d-flex align-items-center w-50">
         <input
-          className="SliderSimple"
+          className=""
           type="range"
           min={this.props.min}
           max={this.props.max}
           value={this.state.value}
           onChange={this.changeValue}
         />
-        <p className="mb-0">{this.state.value}</p>
+        {/* <p className="mb-0">{this.state.value}</p> */}
       </div>
     );
   }

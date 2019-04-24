@@ -37,6 +37,14 @@ module.exports = (options) => {
       filename: "./assets/scripts/[name].[hash].js"
     },
     plugins: [
+      new Webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+        Tether: "tether",
+        "window.Tether": "tether",
+        Popper: ["popper.js", "default"]
+      }),
       new CopyWebpackPlugin([
         { from: "./src/assets/images", to: "./assets/images" }
       ]),
@@ -144,7 +152,7 @@ module.exports = (options) => {
         }
       ]
     }
-  };
+  }
 
   if (options.isProduction) {
     webpackConfig.entry = ['./src/app.js'];
